@@ -50,8 +50,14 @@ declare namespace minode {
     /**
      * Do something when Rotary change
      */
-    //% blockId=device_on_ROTARY_CHANGE block="RotaRY %connName| on trigger" shim=minode::onRotaryEvent
+    //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger" shim=minode::onRotaryEvent
     function onRotaryEvent(connName: ConnName, body: () => void): void;
+
+    /**
+     * Get Rotary percentage.
+     */
+    //% blockId=device_ROTARY_GET_Percentage block="ROTARY get %connName| Percentage" shim=minode::RotaryGetPercentage
+    function RotaryGetPercentage(connName: ConnName): number;
 }
 
 // Auto-generated. Do not edit. Really.

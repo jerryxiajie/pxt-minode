@@ -146,7 +146,7 @@ namespace minode {
    * Do something when Rotary change
    */
 
-  //% blockId=device_on_ROTARY_CHANGE block="RotaRY %connName| on trigger"
+  //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger"
   void onRotaryEvent(ConnName connName, Action body) {
     int id;
     MiNodeRotary* pRotary;
@@ -155,6 +155,24 @@ namespace minode {
     id = pRotary->getId();
 
     registerWithDal(id, MINODE_ROTARY_EVT_CHANGE, body);
+  }
+
+  /**
+   * Get Rotary percentage.
+   */
+
+  //% blockId=device_ROTARY_GET_Percentage block="ROTARY get %connName| Percentage"
+
+  int RotaryGetPercentage(ConnName connName)
+  {
+    MiNodeRotary* pRotary;
+    int rotaryPercentage=0;
+
+    pRotary = node.rotary.attach(connName);
+
+    rotaryPercentage = pRotary->getPercentage();
+
+    return rotaryPercentage;
   }
 
 }

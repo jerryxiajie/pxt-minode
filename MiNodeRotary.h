@@ -21,6 +21,7 @@ public:
 
   float getVolt();
   int getADValue();
+  int getPercentage();
 
   void attach(ConnName connName);
 
