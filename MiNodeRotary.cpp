@@ -57,7 +57,7 @@ int MiNodeRotary::getPercentage()
   int temp;
   temp = getADValue();
 
-  return temp/1023;
+  return temp*100/1023;
 }
 
 float MiNodeRotary::getVolt()
