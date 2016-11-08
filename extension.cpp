@@ -245,4 +245,32 @@ namespace minode {
     return micLevel;
   }
 
+  /**
+ * Choose an RGB color.
+ */
+  //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor"
+  void RGBChooseColor(ConnName connName , MiNodeColor color)
+  {
+    MiNodeRGB* pRGB;
+
+    pRGB = node.rgb.attach(connName);
+
+    pRGB->chooseColor(color);
+  }
+
+  /**
+ * Set RGB color in HEX.
+ */
+  //% blockId=device_RGB_SetColor block="RGB %connName| set %text"
+  void RGBSetColor(ConnName connName , StringData *text)
+  {
+    MiNodeRGB* pRGB;
+    unsigned int temp;
+
+    temp = (unsigned int)text;
+    pRGB = node.rgb.attach(connName);
+
+    pRGB->setRGBInHex(temp);
+  }
+
 }

@@ -42,4 +42,22 @@ MINODE_DHT_CELSIUS = 1,
 MINODE_FAN_FAHRENHEIT = 2,
 }
 
+declare enum  MiNodeColor
+{
+//% blockId="MINODE_RGB_RED" block="Red"
+MiNode_RGB_COLOR_RED = 0,
+//% blockId="MINODE_RGB_GREEN" block="Green"
+MiNode_RGB_COLOR_GREEN = 1,
+//% blockId="MINODE_RGB_BLUE" block="Blue"
+MiNode_RGB_COLOR_BLUE = 2,
+//% blockId="MINODE_RGB_YELLOW" block="Yellow"
+MiNode_RGB_COLOR_YELLOW = 3,
+//% blockId="MINODE_RGB_PINK" block="Pink"
+MiNode_RGB_COLOR_PINK = 4,
+//% blockId="MINODE_RGB_CYAN" block="Cyan"
+MiNode_RGB_COLOR_CYAN = 5,
+//% blockId="MINODE_RGB_WHITE" block="White"
+MiNode_RGB_COLOR_WHITE = 6,
+}
+
 // Auto-generated. Do not edit. Really.

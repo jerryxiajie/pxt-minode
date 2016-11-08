@@ -84,6 +84,18 @@ declare namespace minode {
     //% blockId=device_MIC_GET_mic_level block="MIC get %connName| level"
     //% advanced=true shim=minode::MICGetLevel
     function MICGetLevel(connName: ConnName): number;
+
+    /**
+     * Choose an RGB color.
+     */
+    //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor" shim=minode::RGBChooseColor
+    function RGBChooseColor(connName: ConnName, color: MiNodeColor): void;
+
+    /**
+     * Set RGB color in HEX.
+     */
+    //% blockId=device_RGB_SetColor block="RGB %connName| set %text" shim=minode::RGBSetColor
+    function RGBSetColor(connName: ConnName, text: string): void;
 }
 
 // Auto-generated. Do not edit. Really.

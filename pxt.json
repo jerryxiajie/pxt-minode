@@ -35,7 +35,9 @@
         "MiNodeLightSensor.h",
         "MiNodeLightSensor.cpp",
         "MiNodeMIC.h",
-        "MiNodeMIC.cpp"
+        "MiNodeMIC.cpp",
+        "MiNodeRGB.h",
+        "MiNodeRGB.cpp"
     ],
     "testFiles": [
         "tests.ts"
