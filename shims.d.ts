@@ -95,7 +95,7 @@ declare namespace minode {
      * Set RGB color in HEX.
      */
     //% blockId=device_RGB_SetColor block="RGB %connName| set %text" shim=minode::RGBSetColor
-    function RGBSetColor(connName: ConnName, text: string): void;
+    function RGBSetColor(connName: ConnName, text: number): void;
 }
 
 // Auto-generated. Do not edit. Really.

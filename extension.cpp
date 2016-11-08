@@ -262,15 +262,12 @@ namespace minode {
  * Set RGB color in HEX.
  */
   //% blockId=device_RGB_SetColor block="RGB %connName| set %text"
-  void RGBSetColor(ConnName connName , StringData *text)
+  void RGBSetColor(ConnName connName , int text)
   {
     MiNodeRGB* pRGB;
-    unsigned int temp;
-
-    temp = (unsigned int)text;
     pRGB = node.rgb.attach(connName);
 
-    pRGB->setRGBInHex(temp);
+    pRGB->setRGBInHex(text);
   }
 
 }
