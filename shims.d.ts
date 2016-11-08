@@ -36,6 +36,12 @@ declare namespace minode {
     function DHTGetHumidity(connName: ConnName): number;
 
     /**
+     * Do something when DHT11 temperature change
+     */
+    //% blockId=device_on_DHTtemperature_CHANGE block="on DHT11 %connName| temperature change." shim=minode::onDHTEvent
+    function onDHTEvent(connName: ConnName, body: () => void): void;
+
+    /**
      * Do something when PIR triggered
      */
     //% blockId=device_on_PIR_trig block="PIR %connName| on trigger" shim=minode::onPIREvent

@@ -17,6 +17,7 @@ namespace minode {
 
   //% blockId=device_on_switch_event block="switch %connName| on %event"
   //% icon="\uf192"
+
   void onSwitchEvent(ConnName connName, SwitchEvent event, Action body) {
     int id;
     MiNodeSwitch* pSwitch;
@@ -108,6 +109,22 @@ namespace minode {
     dht_humidity = pDHT11->getHumidity();
 
     return dht_humidity;
+  }
+
+  /**
+   * Do something when DHT11 temperature change
+   */
+
+  //% blockId=device_on_DHTtemperature_CHANGE block="on DHT11 %connName| temperature change."
+
+  void onDHTEvent(ConnName connName, Action body) {
+    int id;
+    MiNodeDHT* pDHT11;
+
+    pDHT11 = node.dht11.attach(connName);
+    id = pDHT11->getId();
+
+    registerWithDal(id, MINODE_DHT_EVT_CHANGE, body);
   }
 
 

@@ -103,18 +103,17 @@ void MiNodeDHT::systemTick()
 
  if (count == 100)
   {
-    /* if (currentTem == -99)
-    {
-      currentTem = getTemperature();
-    }
-    */
-    //temp = getTemperature();
-  /*  if ((temp - currentTem == 1) || (currentTem - temp == 1))
+    temp = getTemperature();
+     if (currentTem == -99)
     {
       currentTem = temp;
-      MicroBitEvent(id, MINODE_DHT_EVT_CHANGE);
     }
-   */
+
+    if((temp - currentTem == 1) || (currentTem - temp == 1))
+    {
+      currentTem = temp;
+      MicroBitEvent(this->baseId + this->id, MINODE_DHT_EVT_CHANGE);
+    }
     count = 0;
   }
 
