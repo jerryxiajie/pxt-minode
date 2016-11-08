@@ -198,6 +198,7 @@ namespace minode {
  */
 
   //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change"
+  //% advanced=true
   void onLightSensorEvent(ConnName connName, Action body) {
     int id;
     MiNodeLight* pLight;
@@ -214,7 +215,7 @@ namespace minode {
   */
 
   //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level"
-
+  //% advanced=true
   int LightSensorGetLevel(ConnName connName)
   {
     MiNodeLight* pLight;
@@ -266,6 +267,7 @@ namespace minode {
  * Choose an RGB color.
  */
   //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor"
+  //% advanced=true
   void RGBChooseColor(ConnName connName , MiNodeColor color)
   {
     MiNodeRGB* pRGB;
@@ -279,6 +281,7 @@ namespace minode {
  * Set RGB color in HEX.
  */
   //% blockId=device_RGB_SetColor block="RGB %connName| set %text"
+  //% advanced=true
   void RGBSetColor(ConnName connName , int text)
   {
     MiNodeRGB* pRGB;
