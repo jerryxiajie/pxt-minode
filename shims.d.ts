@@ -58,6 +58,12 @@ declare namespace minode {
      */
     //% blockId=device_ROTARY_GET_Percentage block="ROTARY get %connName| Percentage" shim=minode::RotaryGetPercentage
     function RotaryGetPercentage(connName: ConnName): number;
+
+    /**
+     * Do something when Light level change
+     */
+    //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change" shim=minode::onLightSensorEvent
+    function onLightSensorEvent(connName: ConnName, body: () => void): void;
 }
 
 // Auto-generated. Do not edit. Really.

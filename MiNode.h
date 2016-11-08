@@ -17,6 +17,7 @@
 #include "MiNodeDHT11.h"
 #include "MiNodePIR.h"
 #include "MiNodeRotary.h"
+#include "MiNodeLightSensor.h"
 
 
 class MiNode
@@ -40,6 +41,7 @@ public:
   MiNodeModulePool<MiNodeDHT>      dht11;
   MiNodeModulePool<MiNodePIR>      pir;
   MiNodeModulePool<MiNodeRotary>   rotary;
+  MiNodeModulePool<MiNodeLight>    light;
 
 };
 

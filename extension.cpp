@@ -175,4 +175,19 @@ namespace minode {
     return rotaryPercentage;
   }
 
+  /**
+ * Do something when Light level change
+ */
+
+  //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change"
+  void onLightSensorEvent(ConnName connName, Action body) {
+    int id;
+    MiNodeLight* pLight;
+
+    pLight = node.light.attach(connName);
+    id = pLight->getId();
+
+    registerWithDal(id, MINODE_LIGHT_EVT_LEVEL_CHANGE, body);
+  }
+
 }
