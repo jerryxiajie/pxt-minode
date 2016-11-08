@@ -190,4 +190,23 @@ namespace minode {
     registerWithDal(id, MINODE_LIGHT_EVT_LEVEL_CHANGE, body);
   }
 
+
+  /**
+   * Get Light level.from 1(brightest) to 5(darkness).
+  */
+
+  //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level"
+
+  int LightSensorGetLevel(ConnName connName)
+  {
+    MiNodeLight* pLight;
+    int lightLevel=0;
+
+    pLight = node.light.attach(connName);
+
+    lightLevel = pLight->getLightLevel();
+
+    return lightLevel;
+  }
+
 }

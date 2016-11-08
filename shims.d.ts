@@ -64,6 +64,12 @@ declare namespace minode {
      */
     //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change" shim=minode::onLightSensorEvent
     function onLightSensorEvent(connName: ConnName, body: () => void): void;
+
+    /**
+     * Get Light level.from 1(brightest) to 5(darkness).
+     */
+    //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level" shim=minode::LightSensorGetLevel
+    function LightSensorGetLevel(connName: ConnName): number;
 }
 
 // Auto-generated. Do not edit. Really.
