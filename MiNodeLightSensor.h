@@ -35,9 +35,6 @@
 
 class MiNodeLight : public MiNodeComponent
 {
-	uint8_t sigma;
-	uint8_t pre_status;
-
 	public:
 	  MiNodeLight();
 
@@ -51,6 +48,8 @@ class MiNodeLight : public MiNodeComponent
 
 	private:
 	  AnalogIn* pin;
+	  int sigma;
+		int pre_status;
 };
 
 #endif

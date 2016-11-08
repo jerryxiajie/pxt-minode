@@ -90,7 +90,7 @@ void MiNodeLight::systemTick()
     if (status != pre_status)
     {
       pre_status = status;
-      MicroBitEvent(id, MINODE_LIGHT_EVT_LEVEL_CHANGE);
+      MicroBitEvent(this->baseId + this->id, MINODE_LIGHT_EVT_LEVEL_CHANGE);
     }
   }
 }
