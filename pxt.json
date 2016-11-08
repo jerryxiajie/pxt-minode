@@ -33,7 +33,9 @@
         "MiNodeRotary.h",
         "MiNodeRotary.cpp",
         "MiNodeLightSensor.h",
-        "MiNodeLightSensor.cpp"
+        "MiNodeLightSensor.cpp",
+        "MiNodeMIC.h",
+        "MiNodeMIC.cpp"
     ],
     "testFiles": [
         "tests.ts"

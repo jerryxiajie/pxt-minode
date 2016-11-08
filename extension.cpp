@@ -147,6 +147,7 @@ namespace minode {
    */
 
   //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger"
+
   void onRotaryEvent(ConnName connName, Action body) {
     int id;
     MiNodeRotary* pRotary;
@@ -207,6 +208,41 @@ namespace minode {
     lightLevel = pLight->getLightLevel();
 
     return lightLevel;
+  }
+
+    /**
+ * Do something when MIC level change
+ */
+
+  //% blockId=device_on_MIC_level_change block="MIC %connName| on change"
+  //% advanced=true
+  void onMICEvent(ConnName connName, Action body) {
+    int id;
+    MiNodeMIC* pMic;
+
+    pMic = node.mic.attach(connName);
+    id = pMic->getId();
+
+    registerWithDal(id, MINODE_MIC_EVT_NOISE, body);
+  }
+
+    /**
+   * Get MIC level.from 1(quiet) to 5(noisy).
+  */
+
+  //% blockId=device_MIC_GET_mic_level block="MIC get %connName| level"
+  //% advanced=true
+
+  int MICGetLevel(ConnName connName)
+  {
+    MiNodeMIC* pMic;
+    int micLevel=0;
+
+    pMic = node.mic.attach(connName);
+
+    micLevel = pMic->getMicLevel();
+
+    return micLevel;
   }
 
 }

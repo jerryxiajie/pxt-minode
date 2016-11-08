@@ -70,6 +70,20 @@ declare namespace minode {
      */
     //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level" shim=minode::LightSensorGetLevel
     function LightSensorGetLevel(connName: ConnName): number;
+
+    /**
+     * Do something when MIC level change
+     */
+    //% blockId=device_on_MIC_level_change block="MIC %connName| on change"
+    //% advanced=true shim=minode::onMICEvent
+    function onMICEvent(connName: ConnName, body: () => void): void;
+
+    /**
+     * Get MIC level.from 1(quiet) to 5(noisy).
+     */
+    //% blockId=device_MIC_GET_mic_level block="MIC get %connName| level"
+    //% advanced=true shim=minode::MICGetLevel
+    function MICGetLevel(connName: ConnName): number;
 }
 
 // Auto-generated. Do not edit. Really.
