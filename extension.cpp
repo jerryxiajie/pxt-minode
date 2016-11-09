@@ -8,16 +8,6 @@ MiNode node;
 
 namespace minode {
 
-  /**
-   * Do something when a switch is opened /closed
-   * @param switchId a switch ID .
-   * @param connName MiNode Connector Name
-   * @param event Event to listen
-   */
-
-  //% blockId=device_on_switch_event block="switch %connName| on %event"
-  //% icon="\uf192"
-
   void onSwitchEvent(ConnName connName, SwitchEvent event, Action body) {
     int id;
     MiNodeSwitch* pSwitch;
@@ -27,13 +17,6 @@ namespace minode {
 
     registerWithDal(id, event, body);
   }
-
-
-  /**
-   * Get the switch state (open or not).
-   */
-
-  //% blockId=device_switch_is_opened block="switch %connName| is opened"
 
   bool switchIsOened(ConnName connName) {
 
@@ -45,12 +28,6 @@ namespace minode {
 
     return isOpened ? true : false;
   }
-
-  /**
-   * Control the mini Fan (open or close).
-   */
-
-  //% blockId=device_fan_control block="fan %connName| is %FanStatus"
 
   void FanControl(ConnName connName , FanStatus status)
   {
@@ -67,12 +44,6 @@ namespace minode {
         break;
     }
   }
-
-    /**
-   * Get DHT11 temperature (celsius or fahrenheit).
-   */
-
-  //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus"
 
   int DHTGetTemperature(ConnName connName , DHTTemStyle style)
   {
@@ -93,12 +64,6 @@ namespace minode {
     return dht_tempreature;
   }
 
-  /**
-   * Get DHT11 Humidity.
-   */
-
-  //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| humidity"
-
   int DHTGetHumidity(ConnName connName)
   {
     MiNodeDHT* pDHT11;
@@ -111,12 +76,6 @@ namespace minode {
     return dht_humidity;
   }
 
-  /**
-   * Do something when DHT11 temperature change
-   */
-
-  //% blockId=device_on_DHTtemperature_CHANGE block="on DHT11 %connName| temperature change."
-
   void onDHTEvent(ConnName connName, Action body) {
     int id;
     MiNodeDHT* pDHT11;
@@ -127,12 +86,6 @@ namespace minode {
     registerWithDal(id, MINODE_DHT_EVT_CHANGE, body);
   }
 
-
-  /**
-   * Do something when PIR triggered
-   */
-
-  //% blockId=device_on_PIR_trig block="PIR %connName| on trigger"
   void onPIREvent(ConnName connName, Action body) {
     int id;
     MiNodePIR* pPir;
@@ -143,11 +96,6 @@ namespace minode {
     registerWithDal(id, MINODE_PIR_EVT_TRIG, body);
   }
 
-  /**
- * Get the PIR state (trigger or not).
- */
-
-  //% blockId=device_PIR_istrig block="PIR %connName| is triggered"
   bool PIRIsTriggered(ConnName connName) {
 
     MiNodePIR* pPir;
@@ -159,12 +107,6 @@ namespace minode {
     return triggered ? true : false;
   }
 
-  /**
-   * Do something when Rotary change
-   */
-
-  //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger"
-
   void onRotaryEvent(ConnName connName, Action body) {
     int id;
     MiNodeRotary* pRotary;
@@ -174,12 +116,6 @@ namespace minode {
 
     registerWithDal(id, MINODE_ROTARY_EVT_CHANGE, body);
   }
-
-  /**
-   * Get Rotary percentage.
-   */
-
-  //% blockId=device_ROTARY_GET_Percentage block="ROTARY get %connName| Percentage"
 
   int RotaryGetPercentage(ConnName connName)
   {
@@ -193,12 +129,6 @@ namespace minode {
     return rotaryPercentage;
   }
 
-  /**
- * Do something when Light level change
- */
-
-  //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change"
-  //% advanced=true
   void onLightSensorEvent(ConnName connName, Action body) {
     int id;
     MiNodeLight* pLight;
@@ -209,13 +139,6 @@ namespace minode {
     registerWithDal(id, MINODE_LIGHT_EVT_LEVEL_CHANGE, body);
   }
 
-
-  /**
-   * Get Light level.from 1(brightest) to 5(darkness).
-  */
-
-  //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level"
-  //% advanced=true
   int LightSensorGetLevel(ConnName connName)
   {
     MiNodeLight* pLight;
@@ -228,12 +151,6 @@ namespace minode {
     return lightLevel;
   }
 
-    /**
- * Do something when MIC level change
- */
-
-  //% blockId=device_on_MIC_level_change block="MIC %connName| on change"
-  //% advanced=true
   void onMICEvent(ConnName connName, Action body) {
     int id;
     MiNodeMIC* pMic;
@@ -243,13 +160,6 @@ namespace minode {
 
     registerWithDal(id, MINODE_MIC_EVT_NOISE, body);
   }
-
-    /**
-   * Get MIC level.from 1(quiet) to 5(noisy).
-  */
-
-  //% blockId=device_MIC_GET_mic_level block="MIC get %connName| level"
-  //% advanced=true
 
   int MICGetLevel(ConnName connName)
   {
@@ -263,11 +173,6 @@ namespace minode {
     return micLevel;
   }
 
-  /**
- * Choose an RGB color.
- */
-  //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor"
-  //% advanced=true
   void RGBChooseColor(ConnName connName , MiNodeColor color)
   {
     MiNodeRGB* pRGB;
@@ -277,11 +182,6 @@ namespace minode {
     pRGB->chooseColor(color);
   }
 
-  /**
- * Set RGB color in HEX.
- */
-  //% blockId=device_RGB_SetColor block="RGB %connName| set %text"
-  //% advanced=true
   void RGBSetColor(ConnName connName , int text)
   {
     MiNodeRGB* pRGB;
