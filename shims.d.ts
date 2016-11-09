@@ -50,7 +50,7 @@ declare namespace minode {
     /**
      * Get the PIR state (trigger or not).
      */
-    //% blockId=device_PIR_istrig block="switch %connName| is triggered" shim=minode::PIRIsTriggered
+    //% blockId=device_PIR_istrig block="PIR %connName| is triggered" shim=minode::PIRIsTriggered
     function PIRIsTriggered(connName: ConnName): boolean;
 
     /**

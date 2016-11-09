@@ -147,7 +147,7 @@ namespace minode {
  * Get the PIR state (trigger or not).
  */
 
-  //% blockId=device_PIR_istrig block="switch %connName| is triggered"
+  //% blockId=device_PIR_istrig block="PIR %connName| is triggered"
   bool PIRIsTriggered(ConnName connName) {
 
     MiNodePIR* pPir;
