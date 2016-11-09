@@ -37,7 +37,8 @@
         "MiNodeMIC.h",
         "MiNodeMIC.cpp",
         "MiNodeRGB.h",
-        "MiNodeRGB.cpp"
+        "MiNodeRGB.cpp",
+        "pxt_minode.cpp"
     ],
     "testFiles": [
         "tests.ts"
