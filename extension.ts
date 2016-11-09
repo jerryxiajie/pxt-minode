@@ -10,7 +10,7 @@ namespace minode {
   //% blockId=device_on_switch_event block="switch %connName| on %event"
   //% icon="\uf192"
   //% shim=minode::onSwitchEvent
-  function onSwitchEvent(connName : ConnName , event : SwitchEvent, body : Action): void
+  export function onSwitchEvent(connName : ConnName , event : SwitchEvent, body : Action): void
   {
   }
 
