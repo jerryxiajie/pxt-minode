@@ -100,26 +100,6 @@ namespace minode {
   }
 
   /**
-  * Control the mini Fan (open or close).
-  */
-  //% blockId=device_fan_control block="fan %connName| is %FanStatus"
-  void FanControl(ConnName connName , FanStatus status)
-  {
-    MiNodeFan* pFan;
-
-    pFan = node.fan.attach(connName);
-
-    switch(status) {
-      case MINODE_FAN_OPEN:
-          pFan->fanOpen();
-        break;
-      case MINODE_FAN_CLOSE:
-          pFan->fanClose();
-        break;
-    }
-  }
-
-  /**
   * Get DHT11 temperature (celsius or fahrenheit).
   */
   //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus"
@@ -310,16 +290,16 @@ namespace minode {
   }
 
   /**
-  * Set RGB color in HEX.
+  * Converts red, green, blue channels into a RGB color
   */
-  //% blockId=device_RGB_SetColor block="RGB %connName| set %text"
+  //% blockId=device_RGB_SetColor block="RGB %connName| set red %red| green %green| blue %blue"
   //% advanced=true
-  void RGBSetColor(ConnName connName , int text)
+  void RGBSetColor(ConnName connName , int red, int green, int blue)
   {
     MiNodeRGB* pRGB;
     pRGB = node.rgb.attach(connName);
 
-    pRGB->setRGBInHex(text);
+    pRGB->setRGB(red,green,blue);
   }
 
 }

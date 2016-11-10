@@ -30,12 +30,6 @@ declare namespace minode {
     function switchIsOened(connName: ConnName): boolean;
 
     /**
-     * Control the mini Fan (open or close).
-     */
-    //% blockId=device_fan_control block="fan %connName| is %FanStatus" shim=minode::FanControl
-    function FanControl(connName: ConnName, status: FanStatus): void;
-
-    /**
      * Get DHT11 temperature (celsius or fahrenheit).
      */
     //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus" shim=minode::DHTGetTemperature
@@ -113,11 +107,11 @@ declare namespace minode {
     function RGBChooseColor(connName: ConnName, color: MiNodeColor): void;
 
     /**
-     * Set RGB color in HEX.
+     * Converts red, green, blue channels into a RGB color
      */
-    //% blockId=device_RGB_SetColor block="RGB %connName| set %text"
+    //% blockId=device_RGB_SetColor block="RGB %connName| set red %red| green %green| blue %blue"
     //% advanced=true shim=minode::RGBSetColor
-    function RGBSetColor(connName: ConnName, text: number): void;
+    function RGBSetColor(connName: ConnName, red: number, green: number, blue: number): void;
 }
 
 // Auto-generated. Do not edit. Really.
