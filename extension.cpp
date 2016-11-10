@@ -13,9 +13,39 @@ namespace minode {
   //% blockId=get_pin_name
   int getPin(ConnName connName)
   {
-    PinName pinName = MiNodeConn::calcP0Name(connName);
+    int temp=0;
 
-    return pinName;
+    PinName pinName1 = MiNodeConn::calcP0Name(connName);
+
+    switch(pinName1)
+    {
+      case MICROBIT_PIN_P0:
+        temp = MICROBIT_ID_IO_P0;
+        break;
+      case MICROBIT_PIN_P1:
+        temp = MICROBIT_ID_IO_P1;
+        break;
+      case MICROBIT_PIN_P2:
+        temp = MICROBIT_ID_IO_P2;
+        break;
+      case MICROBIT_PIN_P12:
+        temp = MICROBIT_ID_IO_P12;
+        break;
+      case MICROBIT_PIN_P13:
+        temp = MICROBIT_ID_IO_P13;
+        break;
+      case MICROBIT_PIN_P14:
+        temp = MICROBIT_ID_IO_P14;
+        break;
+      case MICROBIT_PIN_P15:
+        temp = MICROBIT_ID_IO_P15;
+        break;
+      default:
+        temp = 0;
+        break;
+    }
+
+    return temp;
   }
 
   /**
