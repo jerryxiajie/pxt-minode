@@ -24,7 +24,6 @@ public:
 
   int isOpened();
 
-
 private:
   void onOpen();
   void onClose();
