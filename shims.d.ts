@@ -8,6 +8,12 @@ declare namespace minode {
     function getPin(connName: ConnName): number;
 
     /**
+     * Get analog pinname
+     */
+    //% blockId=get_analog_pin_name shim=minode::getanalogPin
+    function getanalogPin(connName: AnalogConnName): number;
+
+    /**
      * Get Pin Property
      */
     //% blockId=get_pin_property shim=minode::getPinProperty
@@ -19,98 +25,98 @@ declare namespace minode {
      * @param connName MiNode Connector Name
      * @param event Event to listen
      */
-    //% blockId=device_on_switch_event block="switch %connName| on %event"
-    //% icon="\uf192" shim=minode::onSwitchEvent
+    //% blockId=device_on_switch_event block="switch %connName| on %event" shim=minode::onSwitchEvent
     function onSwitchEvent(connName: ConnName, event: SwitchEvent, body: () => void): void;
 
     /**
      * Get the switch state (open or not).
      */
     //% blockId=device_switch_is_opened block="switch %connName| is opened"
-    //% icon="\uf192" shim=minode::switchIsOpened
+    //% advanced=true shim=minode::switchIsOpened
     function switchIsOpened(connName: ConnName): boolean;
 
     /**
      * Get DHT11 temperature (celsius or fahrenheit).
      */
-    //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus" shim=minode::DHTGetTemperature
+    //% blockId=device_DHT_GET_Temperature block="dht11 %connName| tempreature %FanStatus" shim=minode::DHTGetTemperature
     function DHTGetTemperature(connName: ConnName, style: DHTTemStyle): number;
 
     /**
      * Get DHT11 Humidity.
      */
-    //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| humidity" shim=minode::DHTGetHumidity
+    //% blockId=device_DHT_GET_Humidity block="dht11 %connName| humidity"
+    //% advanced=true shim=minode::DHTGetHumidity
     function DHTGetHumidity(connName: ConnName): number;
 
     /**
      * Do something when DHT11 temperature change.
      */
-    //% blockId=device_on_DHTtemperature_CHANGE block="on DHT11 %connName| temperature change." shim=minode::onDHTEvent
+    //% blockId=device_on_DHTtemperature_CHANGE block="on dht11 %connName| temperature change"
+    //% advanced=true shim=minode::onDHTEvent
     function onDHTEvent(connName: ConnName, body: () => void): void;
 
     /**
      * Do something when PIR triggered.
      */
-    //% blockId=device_on_PIR_trig block="PIR %connName| on trigger" shim=minode::onPIREvent
+    //% blockId=device_on_PIR_trig block="pir %connName| on trigger" shim=minode::onPIREvent
     function onPIREvent(connName: ConnName, body: () => void): void;
 
     /**
      * Get the PIR state (trigger or not).
      */
-    //% blockId=device_PIR_istrig block="PIR %connName| is triggered" shim=minode::PIRIsTriggered
+    //% blockId=device_PIR_istrig block="pir %connName| is triggered"
+    //% advanced=true shim=minode::PIRIsTriggered
     function PIRIsTriggered(connName: ConnName): boolean;
 
     /**
      * Do something when Rotary change.
      */
-    //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger" shim=minode::onRotaryEvent
+    //% blockId=device_on_ROTARY_CHANGE block="rotary %connName| on trigger" shim=minode::onRotaryEvent
     function onRotaryEvent(connName: ConnName, body: () => void): void;
 
     /**
      * Get Rotary percentage.
      */
-    //% blockId=device_ROTARY_GET_Percentage block="ROTARY get %connName| Percentage" shim=minode::RotaryGetPercentage
+    //% blockId=device_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
+    //% advanced=true shim=minode::RotaryGetPercentage
     function RotaryGetPercentage(connName: ConnName): number;
 
     /**
      * Do something when Light level change.
      */
-    //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change"
-    //% advanced=true shim=minode::onLightSensorEvent
+    //% blockId=device_on_LightSensor_CHANGE block="lightSensor %connName| on change" shim=minode::onLightSensorEvent
     function onLightSensorEvent(connName: ConnName, body: () => void): void;
 
     /**
      * Get Light level.from 1(brightest) to 5(darkness).
      */
-    //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level"
+    //% blockId=device_LightSensor_GET_light_level block="lightSensor %connName| get level"
     //% advanced=true shim=minode::LightSensorGetLevel
     function LightSensorGetLevel(connName: ConnName): number;
 
     /**
      * Do something when MIC level change.
      */
-    //% blockId=device_on_MIC_level_change block="MIC %connName| on change"
-    //% advanced=true shim=minode::onMICEvent
+    //% blockId=device_on_MIC_level_change block="mic %connName| on change" shim=minode::onMICEvent
     function onMICEvent(connName: ConnName, body: () => void): void;
 
     /**
      * Get MIC level.from 1(quiet) to 5(noisy).
      */
-    //% blockId=device_MIC_GET_mic_level block="MIC get %connName| level"
+    //% blockId=device_MIC_GET_mic_level block="mic %connName| get level"
     //% advanced=true shim=minode::MICGetLevel
     function MICGetLevel(connName: ConnName): number;
 
     /**
      * Choose an RGB color from the given table.
      */
-    //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor"
-    //% advanced=true shim=minode::RGBChooseColor
+    //% blockId=device_RGB_ChooseColor block="rgb %connName| set %MiNodeColor" shim=minode::RGBChooseColor
     function RGBChooseColor(connName: ConnName, color: MiNodeColor): void;
 
     /**
      * Converts red, green, blue channels into a RGB color.
      */
-    //% blockId=device_RGB_SetColor block="RGB %connName| set red %red| green %green| blue %blue"
+    //% blockId=device_RGB_SetColor block="rgb %connName| set red %red| green %green| blue %blue"
     //% advanced=true shim=minode::RGBSetColor
     function RGBSetColor(connName: ConnName, red: number, green: number, blue: number): void;
 }

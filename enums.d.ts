@@ -18,19 +18,29 @@ declare enum ConnName
   D15 = 15
 }
 
+declare enum AnalogConnName
+{
+  //% block="A0"
+  Analog_A0 = 0,
+  //% block="A1"
+  Analog_A1 = 1,
+  //% block="A2"
+  Analog_A2 = 2
+}
+
 declare enum SwitchEvent
 {
-//% block="Open"
+//% block="open"
 MINODE_SWITCH_EVT_OPEN = 1,
-//% block="Close"
+//% block="close"
 MINODE_SWITCH_EVT_CLOSE = 2,
 }
 
 declare enum FanStatus
 {
-//% block="Open"
+//% block="open"
 MINODE_FAN_OPEN = 1,
-//% block="Close"
+//% block="close"
 MINODE_FAN_CLOSE = 2,
 }
 

@@ -48,6 +48,35 @@ namespace minode {
     return temp;
   }
 
+    /**
+   * Get analog pinname
+   */
+  //% blockId=get_analog_pin_name
+  int getanalogPin(AnalogConnName connName)
+  {
+    int temp=0;
+
+    PinName pinName1 = MiNodeConn::calcP0Name(connName);
+
+    switch(pinName1)
+    {
+      case MICROBIT_PIN_P0:
+        temp = MICROBIT_ID_IO_P0;
+        break;
+      case MICROBIT_PIN_P1:
+        temp = MICROBIT_ID_IO_P1;
+        break;
+      case MICROBIT_PIN_P2:
+        temp = MICROBIT_ID_IO_P2;
+        break;
+      default:
+        temp = 0;
+        break;
+    }
+
+    return temp;
+  }
+
   /**
    * Get Pin Property
    */
@@ -73,8 +102,8 @@ namespace minode {
    */
 
   //% blockId=device_on_switch_event block="switch %connName| on %event"
-  //% icon="\uf192"
-  void onSwitchEvent(ConnName connName, SwitchEvent event, Action body) {
+  void onSwitchEvent(ConnName connName, SwitchEvent event, Action body)
+  {
     int id;
     MiNodeSwitch* pSwitch;
 
@@ -88,8 +117,9 @@ namespace minode {
  * Get the switch state (open or not).
  */
   //% blockId=device_switch_is_opened block="switch %connName| is opened"
-  //% icon="\uf192"
-  bool switchIsOpened(ConnName connName) {
+  //% advanced=true
+  bool switchIsOpened(ConnName connName)
+  {
 
     MiNodeSwitch* pSwitch;
     int isOpened;
@@ -103,7 +133,7 @@ namespace minode {
   /**
   * Get DHT11 temperature (celsius or fahrenheit).
   */
-  //% blockId=device_DHT_GET_Temperature block="DHT11 %connName| tempreature %FanStatus"
+  //% blockId=device_DHT_GET_Temperature block="dht11 %connName| tempreature %FanStatus"
   int DHTGetTemperature(ConnName connName , DHTTemStyle style)
   {
     MiNodeDHT* pDHT11;
@@ -125,7 +155,8 @@ namespace minode {
   /**
   * Get DHT11 Humidity.
   */
-  //% blockId=device_DHT_GET_Humidity block="DHT11 %connName| humidity"
+  //% blockId=device_DHT_GET_Humidity block="dht11 %connName| humidity"
+  //% advanced=true
   int DHTGetHumidity(ConnName connName)
   {
     MiNodeDHT* pDHT11;
@@ -140,8 +171,10 @@ namespace minode {
   /**
   * Do something when DHT11 temperature change.
   */
-  //% blockId=device_on_DHTtemperature_CHANGE block="on DHT11 %connName| temperature change."
-  void onDHTEvent(ConnName connName, Action body) {
+  //% blockId=device_on_DHTtemperature_CHANGE block="on dht11 %connName| temperature change"
+  //% advanced=true
+  void onDHTEvent(ConnName connName, Action body)
+  {
     int id;
     MiNodeDHT* pDHT11;
 
@@ -154,8 +187,9 @@ namespace minode {
   /**
   * Do something when PIR triggered.
   */
-  //% blockId=device_on_PIR_trig block="PIR %connName| on trigger"
-  void onPIREvent(ConnName connName, Action body) {
+  //% blockId=device_on_PIR_trig block="pir %connName| on trigger"
+  void onPIREvent(ConnName connName, Action body)
+  {
     int id;
     MiNodePIR* pPir;
 
@@ -168,8 +202,10 @@ namespace minode {
   /**
   * Get the PIR state (trigger or not).
   */
-  //% blockId=device_PIR_istrig block="PIR %connName| is triggered"
-  bool PIRIsTriggered(ConnName connName) {
+  //% blockId=device_PIR_istrig block="pir %connName| is triggered"
+  //% advanced=true
+  bool PIRIsTriggered(ConnName connName)
+  {
 
     MiNodePIR* pPir;
     int triggered;
@@ -183,8 +219,9 @@ namespace minode {
   /**
    * Do something when Rotary change.
    */
-  //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger"
-  void onRotaryEvent(ConnName connName, Action body) {
+  //% blockId=device_on_ROTARY_CHANGE block="rotary %connName| on trigger"
+  void onRotaryEvent(ConnName connName, Action body)
+  {
     int id;
     MiNodeRotary* pRotary;
 
@@ -197,7 +234,8 @@ namespace minode {
   /**
    * Get Rotary percentage.
   */
-  //% blockId=device_ROTARY_GET_Percentage block="ROTARY get %connName| Percentage"
+  //% blockId=device_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
+  //% advanced=true
   int RotaryGetPercentage(ConnName connName)
   {
     MiNodeRotary* pRotary;
@@ -212,9 +250,9 @@ namespace minode {
   /**
   * Do something when Light level change.
   */
-  //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change"
-  //% advanced=true
-  void onLightSensorEvent(ConnName connName, Action body) {
+  //% blockId=device_on_LightSensor_CHANGE block="lightSensor %connName| on change"
+  void onLightSensorEvent(ConnName connName, Action body)
+  {
     int id;
     MiNodeLight* pLight;
 
@@ -227,7 +265,7 @@ namespace minode {
   /**
    * Get Light level.from 1(brightest) to 5(darkness).
   */
-  //% blockId=device_LightSensor_GET_light_level block="LightSensor get %connName| level"
+  //% blockId=device_LightSensor_GET_light_level block="lightSensor %connName| get level"
   //% advanced=true
   int LightSensorGetLevel(ConnName connName)
   {
@@ -243,9 +281,9 @@ namespace minode {
   /**
   * Do something when MIC level change.
   */
-  //% blockId=device_on_MIC_level_change block="MIC %connName| on change"
-  //% advanced=true
-  void onMICEvent(ConnName connName, Action body) {
+  //% blockId=device_on_MIC_level_change block="mic %connName| on change"
+  void onMICEvent(ConnName connName, Action body)
+  {
     int id;
     MiNodeMIC* pMic;
 
@@ -258,7 +296,7 @@ namespace minode {
   /**
    * Get MIC level.from 1(quiet) to 5(noisy).
   */
-  //% blockId=device_MIC_GET_mic_level block="MIC get %connName| level"
+  //% blockId=device_MIC_GET_mic_level block="mic %connName| get level"
   //% advanced=true
   int MICGetLevel(ConnName connName)
   {
@@ -274,8 +312,7 @@ namespace minode {
   /**
  * Choose an RGB color from the given table.
  */
-  //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor"
-  //% advanced=true
+  //% blockId=device_RGB_ChooseColor block="rgb %connName| set %MiNodeColor"
   void RGBChooseColor(ConnName connName , MiNodeColor color)
   {
     MiNodeRGB* pRGB;
@@ -288,7 +325,7 @@ namespace minode {
   /**
   * Converts red, green, blue channels into a RGB color.
   */
-  //% blockId=device_RGB_SetColor block="RGB %connName| set red %red| green %green| blue %blue"
+  //% blockId=device_RGB_SetColor block="rgb %connName| set red %red| green %green| blue %blue"
   //% advanced=true
   void RGBSetColor(ConnName connName , int red, int green, int blue)
   {
