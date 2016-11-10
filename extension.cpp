@@ -66,7 +66,7 @@ namespace minode {
 
 
   /**
-   * Do something when a switch is opened /closed
+   * Do something when a switch is opened/closed
    * @param switchId a switch ID .
    * @param connName MiNode Connector Name
    * @param event Event to listen
@@ -88,7 +88,8 @@ namespace minode {
  * Get the switch state (open or not).
  */
   //% blockId=device_switch_is_opened block="switch %connName| is opened"
-  bool switchIsOened(ConnName connName) {
+  //% icon="\uf192"
+  bool switchIsOpened(ConnName connName) {
 
     MiNodeSwitch* pSwitch;
     int isOpened;
@@ -109,7 +110,6 @@ namespace minode {
     int dht_tempreature=0;
 
     pDHT11 = node.dht11.attach(connName);
-
     switch(style) {
       case MINODE_DHT_CELSIUS:
           dht_tempreature = pDHT11->getTemperature();
@@ -132,14 +132,13 @@ namespace minode {
     int dht_humidity=0;
 
     pDHT11 = node.dht11.attach(connName);
-
     dht_humidity = pDHT11->getHumidity();
 
     return dht_humidity;
   }
 
   /**
-  * Do something when DHT11 temperature change
+  * Do something when DHT11 temperature change.
   */
   //% blockId=device_on_DHTtemperature_CHANGE block="on DHT11 %connName| temperature change."
   void onDHTEvent(ConnName connName, Action body) {
@@ -153,7 +152,7 @@ namespace minode {
   }
 
   /**
-  * Do something when PIR triggered
+  * Do something when PIR triggered.
   */
   //% blockId=device_on_PIR_trig block="PIR %connName| on trigger"
   void onPIREvent(ConnName connName, Action body) {
@@ -182,7 +181,7 @@ namespace minode {
   }
 
   /**
-   * Do something when Rotary change
+   * Do something when Rotary change.
    */
   //% blockId=device_on_ROTARY_CHANGE block="Rotary %connName| on trigger"
   void onRotaryEvent(ConnName connName, Action body) {
@@ -205,14 +204,13 @@ namespace minode {
     int rotaryPercentage=0;
 
     pRotary = node.rotary.attach(connName);
-
     rotaryPercentage = pRotary->getPercentage();
 
     return rotaryPercentage;
   }
 
   /**
-  * Do something when Light level change
+  * Do something when Light level change.
   */
   //% blockId=device_on_LightSensor_CHANGE block="LightSensor %connName| on change"
   //% advanced=true
@@ -237,14 +235,13 @@ namespace minode {
     int lightLevel=0;
 
     pLight = node.light.attach(connName);
-
     lightLevel = pLight->getLightLevel();
 
     return lightLevel;
   }
 
   /**
-  * Do something when MIC level change
+  * Do something when MIC level change.
   */
   //% blockId=device_on_MIC_level_change block="MIC %connName| on change"
   //% advanced=true
@@ -269,14 +266,13 @@ namespace minode {
     int micLevel=0;
 
     pMic = node.mic.attach(connName);
-
     micLevel = pMic->getMicLevel();
 
     return micLevel;
   }
 
   /**
- * Choose an RGB color.
+ * Choose an RGB color from the given table.
  */
   //% blockId=device_RGB_ChooseColor block="RGB %connName| set %MiNodeColor"
   //% advanced=true
@@ -290,13 +286,14 @@ namespace minode {
   }
 
   /**
-  * Converts red, green, blue channels into a RGB color
+  * Converts red, green, blue channels into a RGB color.
   */
   //% blockId=device_RGB_SetColor block="RGB %connName| set red %red| green %green| blue %blue"
   //% advanced=true
   void RGBSetColor(ConnName connName , int red, int green, int blue)
   {
     MiNodeRGB* pRGB;
+
     pRGB = node.rgb.attach(connName);
 
     pRGB->setRGB(red,green,blue);

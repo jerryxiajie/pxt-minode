@@ -1,8 +1,13 @@
+
+/**
+ * Provides access to basic minode functionality.
+ */
+//% color=#64ac67 weight=100
 namespace minode {
 
 
     /**
-     * motor control
+     * control the motor speed (0 to 20000)
      */
     //% blockId=device_motor_control1 block="FAN_Control %connName| on %speed"
     //% advanced=true
@@ -12,7 +17,7 @@ namespace minode {
     }
 
     /**
-     * relay control
+     * relay control(open / close)
      */
     //% blockId=device_relay_control block="Relay %connName| set %status"
     //% advanced=true
