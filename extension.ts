@@ -9,15 +9,15 @@ namespace minode {
     {
       if(getPin(connName) == 3)
       {
-        pins.servoWritePin(7,speed);
+        pins.servoSetPulse(7,speed);
       }
       else if(getPin(connName) == 2)
       {
-        pins.servoWritePin(8,speed);
+        pins.servoSetPulse(8,speed);
       }
       else if(getPin(connName) == 1)
       {
-        pins.servoWritePin(9,speed);
+        pins.servoSetPulse(9,speed);
       }
 
     }
