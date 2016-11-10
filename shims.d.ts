@@ -8,6 +8,12 @@ declare namespace minode {
     function getPin(connName: ConnName): number;
 
     /**
+     * Get Pin Property
+     */
+    //% blockId=get_pin_property shim=minode::getPinProperty
+    function getPinProperty(connName: ConnName): number;
+
+    /**
      * Do something when a switch is opened /closed
      * @param switchId a switch ID .
      * @param connName MiNode Connector Name

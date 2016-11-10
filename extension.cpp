@@ -49,6 +49,23 @@ namespace minode {
   }
 
   /**
+   * Get Pin Property
+   */
+  //% blockId=get_pin_property
+  int getPinProperty(ConnName connName)
+  {
+    if (connName == A0 || connName == A1 || connName == A2)
+    {
+      return 1;
+    }
+    else
+    {
+      return 0;
+    }
+  }
+
+
+  /**
    * Do something when a switch is opened /closed
    * @param switchId a switch ID .
    * @param connName MiNode Connector Name
