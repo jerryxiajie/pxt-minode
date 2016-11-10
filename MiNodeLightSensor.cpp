@@ -16,13 +16,13 @@ MiNodeLight::~MiNodeLight()
 }
 
 
-void MiNodeLight::attach(ConnName connName)
+void MiNodeLight::attach(AnalogConnName connName)
 {
   if(this->cn != MN_NC) {
     return;
   }
 
-  MiNodeComponent::initConnector(connName);
+  MiNodeComponent::initAConnector(connName);
 
   PinName pinName = MiNodeConn::calcP0Name(this->cn);
   if(pin) {

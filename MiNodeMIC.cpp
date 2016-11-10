@@ -15,13 +15,13 @@ MiNodeMIC::~MiNodeMIC()
   system_timer_remove_component(this);
 }
 
-void MiNodeMIC::attach(ConnName connName)
+void MiNodeMIC::attach(AnalogConnName connName)
 {
   if(this->cn != MN_NC) {
     return;
   }
 
-  MiNodeComponent::initConnector(connName);
+  MiNodeComponent::initAConnector(connName);
 
   PinName pinName = MiNodeConn::calcP0Name(this->cn);
   if(pin) {

@@ -15,13 +15,13 @@ MiNodeRotary::~MiNodeRotary()
   system_timer_remove_component(this);
 }
 
-void MiNodeRotary::attach(ConnName connName)
+void MiNodeRotary::attach(AnalogConnName connName)
 {
   if(this->cn != MN_NC) {
     return;
   }
 
-  MiNodeComponent::initConnector(connName);
+  MiNodeComponent::initAConnector(connName);
 
   PinName pinName = MiNodeConn::calcP0Name(this->cn);
   if(pin) {

@@ -23,7 +23,7 @@ public:
   int getADValue();
   int getPercentage();
 
-  void attach(ConnName connName);
+  void attach(AnalogConnName connName);
 
   virtual void systemTick();
   ~MiNodeRotary();

@@ -10,7 +10,6 @@ namespace minode {
      * control the motor speed (0 to 100)
      */
     //% blockId=device_motor_control1 block="fan %connName| speed %speed"
-    //% advanced=true
     export function FanControl_1(connName:AnalogConnName , speed:number): void
     {
       speed /= 200;
@@ -21,7 +20,6 @@ namespace minode {
      * relay control(open / close)
      */
     //% blockId=device_relay_control block="relay %connName| set %status"
-    //% advanced=true
     export function RelayControl(connName:ConnName , status:FanStatus): void
     {
       if(getPinProperty(connName) == 1)

@@ -41,7 +41,7 @@ class MiNodeLight : public MiNodeComponent
 	  unsigned short getLightLevel(void);
 	  unsigned short getLight(void);
 
-  	void attach(ConnName connName);
+  	void attach(AnalogConnName connName);
 
 	  virtual void systemTick();
 	   ~MiNodeLight();

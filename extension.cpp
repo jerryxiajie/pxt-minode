@@ -188,7 +188,7 @@ namespace minode {
   * Do something when PIR triggered.
   */
   //% blockId=device_on_PIR_trig block="pir %connName| on trigger"
-  void onPIREvent(ConnName connName, Action body)
+  void onPIREvent(AnalogConnName connName, Action body)
   {
     int id;
     MiNodePIR* pPir;
@@ -204,7 +204,7 @@ namespace minode {
   */
   //% blockId=device_PIR_istrig block="pir %connName| is triggered"
   //% advanced=true
-  bool PIRIsTriggered(ConnName connName)
+  bool PIRIsTriggered(AnalogConnName connName)
   {
 
     MiNodePIR* pPir;
@@ -220,7 +220,7 @@ namespace minode {
    * Do something when Rotary change.
    */
   //% blockId=device_on_ROTARY_CHANGE block="rotary %connName| on trigger"
-  void onRotaryEvent(ConnName connName, Action body)
+  void onRotaryEvent(AnalogConnName connName, Action body)
   {
     int id;
     MiNodeRotary* pRotary;
@@ -236,7 +236,7 @@ namespace minode {
   */
   //% blockId=device_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
   //% advanced=true
-  int RotaryGetPercentage(ConnName connName)
+  int RotaryGetPercentage(AnalogConnName connName)
   {
     MiNodeRotary* pRotary;
     int rotaryPercentage=0;
@@ -251,7 +251,7 @@ namespace minode {
   * Do something when Light level change.
   */
   //% blockId=device_on_LightSensor_CHANGE block="lightSensor %connName| on change"
-  void onLightSensorEvent(ConnName connName, Action body)
+  void onLightSensorEvent(AnalogConnName connName, Action body)
   {
     int id;
     MiNodeLight* pLight;
@@ -267,7 +267,7 @@ namespace minode {
   */
   //% blockId=device_LightSensor_GET_light_level block="lightSensor %connName| get level"
   //% advanced=true
-  int LightSensorGetLevel(ConnName connName)
+  int LightSensorGetLevel(AnalogConnName connName)
   {
     MiNodeLight* pLight;
     int lightLevel=0;
@@ -282,7 +282,7 @@ namespace minode {
   * Do something when MIC level change.
   */
   //% blockId=device_on_MIC_level_change block="mic %connName| on change"
-  void onMICEvent(ConnName connName, Action body)
+  void onMICEvent(AnalogConnName connName, Action body)
   {
     int id;
     MiNodeMIC* pMic;
@@ -298,7 +298,7 @@ namespace minode {
   */
   //% blockId=device_MIC_GET_mic_level block="mic %connName| get level"
   //% advanced=true
-  int MICGetLevel(ConnName connName)
+  int MICGetLevel(AnalogConnName connName)
   {
     MiNodeMIC* pMic;
     int micLevel=0;

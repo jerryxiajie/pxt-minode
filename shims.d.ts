@@ -59,53 +59,53 @@ declare namespace minode {
      * Do something when PIR triggered.
      */
     //% blockId=device_on_PIR_trig block="pir %connName| on trigger" shim=minode::onPIREvent
-    function onPIREvent(connName: ConnName, body: () => void): void;
+    function onPIREvent(connName: AnalogConnName, body: () => void): void;
 
     /**
      * Get the PIR state (trigger or not).
      */
     //% blockId=device_PIR_istrig block="pir %connName| is triggered"
     //% advanced=true shim=minode::PIRIsTriggered
-    function PIRIsTriggered(connName: ConnName): boolean;
+    function PIRIsTriggered(connName: AnalogConnName): boolean;
 
     /**
      * Do something when Rotary change.
      */
     //% blockId=device_on_ROTARY_CHANGE block="rotary %connName| on trigger" shim=minode::onRotaryEvent
-    function onRotaryEvent(connName: ConnName, body: () => void): void;
+    function onRotaryEvent(connName: AnalogConnName, body: () => void): void;
 
     /**
      * Get Rotary percentage.
      */
     //% blockId=device_ROTARY_GET_Percentage block="rotary %connName| get Percentage"
     //% advanced=true shim=minode::RotaryGetPercentage
-    function RotaryGetPercentage(connName: ConnName): number;
+    function RotaryGetPercentage(connName: AnalogConnName): number;
 
     /**
      * Do something when Light level change.
      */
     //% blockId=device_on_LightSensor_CHANGE block="lightSensor %connName| on change" shim=minode::onLightSensorEvent
-    function onLightSensorEvent(connName: ConnName, body: () => void): void;
+    function onLightSensorEvent(connName: AnalogConnName, body: () => void): void;
 
     /**
      * Get Light level.from 1(brightest) to 5(darkness).
      */
     //% blockId=device_LightSensor_GET_light_level block="lightSensor %connName| get level"
     //% advanced=true shim=minode::LightSensorGetLevel
-    function LightSensorGetLevel(connName: ConnName): number;
+    function LightSensorGetLevel(connName: AnalogConnName): number;
 
     /**
      * Do something when MIC level change.
      */
     //% blockId=device_on_MIC_level_change block="mic %connName| on change" shim=minode::onMICEvent
-    function onMICEvent(connName: ConnName, body: () => void): void;
+    function onMICEvent(connName: AnalogConnName, body: () => void): void;
 
     /**
      * Get MIC level.from 1(quiet) to 5(noisy).
      */
     //% blockId=device_MIC_GET_mic_level block="mic %connName| get level"
     //% advanced=true shim=minode::MICGetLevel
-    function MICGetLevel(connName: ConnName): number;
+    function MICGetLevel(connName: AnalogConnName): number;
 
     /**
      * Choose an RGB color from the given table.
