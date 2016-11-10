@@ -15,7 +15,7 @@ namespace minode {
   {
     PinName pinName = MiNodeConn::calcP0Name(connName);
 
-    return pinName;
+    return pinName+4;
   }
 
   /**
