@@ -56,7 +56,7 @@ public:
     T* findModule = NULL;
     for(it = modules.begin(); it != modules.end(); it++) {
       T* pModule = *it;
-      if(conn == pModule->getConnector()) {
+      if(conn == pModule->AgetConnector()) {
         findModule = pModule;
         break;
       }

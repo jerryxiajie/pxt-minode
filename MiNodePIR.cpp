@@ -42,7 +42,7 @@ int MiNodePIR::isTriged()
 
 void MiNodePIR::onTrigger()
 {
-  MicroBitEvent evt(MINODE_ID_MODULE_PIR,MINODE_PIR_EVT_TRIG);
+  MicroBitEvent evt(this->baseId + this->id,MINODE_PIR_EVT_TRIG);
 }
 
 int MiNodePIR::readPir()
