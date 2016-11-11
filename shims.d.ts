@@ -51,7 +51,7 @@ declare namespace minode {
     /**
      * Do something when DHT11 temperature change.
      */
-    //% blockId=device_on_DHTtemperature_CHANGE block="on dht11 %connName| temperature change"
+    //% blockId=device_on_DHTtemperature_CHANGE block="dht11 %connName| on temperature change"
     //% advanced=true shim=minode::onDHTEvent
     function onDHTEvent(connName: ConnName, body: () => void): void;
 
