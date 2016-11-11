@@ -33,6 +33,7 @@ void MiNodeDHT::attach(ConnName connName)
 void MiNodeDHT::dhtSet(int level)
 {
   pin->output();
+  pin->mode(PullNone);
   pin->write(level);
 }
 

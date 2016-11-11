@@ -26,6 +26,7 @@ void MiNodePIR::attach(ConnName connName)
     delete pin;
   }
   pin = new InterruptIn(pinName);
+  pin->mode(PullNone);
   pin->rise(this, &MiNodePIR::onTrigger);
 }
 
