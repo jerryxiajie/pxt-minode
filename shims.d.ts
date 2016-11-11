@@ -59,14 +59,14 @@ declare namespace minode {
      * Do something when PIR triggered.
      */
     //% blockId=device_on_PIR_trig block="pir %connName| on trigger" shim=minode::onPIREvent
-    function onPIREvent(connName: AnalogConnName, body: () => void): void;
+    function onPIREvent(connName: ConnName, body: () => void): void;
 
     /**
      * Get the PIR state (trigger or not).
      */
     //% blockId=device_PIR_istrig block="pir %connName| is triggered"
     //% advanced=true shim=minode::PIRIsTriggered
-    function PIRIsTriggered(connName: AnalogConnName): boolean;
+    function PIRIsTriggered(connName: ConnName): boolean;
 
     /**
      * Do something when Rotary change.

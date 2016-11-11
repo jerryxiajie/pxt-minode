@@ -22,7 +22,7 @@ public:
   int readPir();
   int isTriged();
 
-  void attach(AnalogConnName connName);
+  void attach(ConnName connName);
 
   ~MiNodePIR();
 

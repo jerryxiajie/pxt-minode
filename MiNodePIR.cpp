@@ -13,13 +13,13 @@ MiNodePIR::~MiNodePIR()
   }
 }
 
-void MiNodePIR::attach(AnalogConnName connName)
+void MiNodePIR::attach(ConnName connName)
 {
   if(this->cn != MN_NC) {
     return;
   }
 
-  MiNodeComponent::initAConnector(connName);
+  MiNodeComponent::initConnector(connName);
 
   PinName pinName = MiNodeConn::calcP0Name(this->cn);
   if(pin) {

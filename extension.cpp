@@ -188,7 +188,7 @@ namespace minode {
   * Do something when PIR triggered.
   */
   //% blockId=device_on_PIR_trig block="pir %connName| on trigger"
-  void onPIREvent(AnalogConnName connName, Action body)
+  void onPIREvent(ConnName connName, Action body)
   {
     int id;
     MiNodePIR* pPir;
@@ -204,7 +204,7 @@ namespace minode {
   */
   //% blockId=device_PIR_istrig block="pir %connName| is triggered"
   //% advanced=true
-  bool PIRIsTriggered(AnalogConnName connName)
+  bool PIRIsTriggered(ConnName connName)
   {
 
     MiNodePIR* pPir;

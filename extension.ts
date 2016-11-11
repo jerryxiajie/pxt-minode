@@ -12,7 +12,7 @@ namespace minode {
     //% blockId=device_motor_control1 block="fan %connName| speed %speed"
     export function FanControl_1(connName:AnalogConnName , speed:number): void
     {
-      speed /= 200;
+      speed *= 200;
       pins.servoSetPulse(getanalogPin(connName),speed);
     }
 
