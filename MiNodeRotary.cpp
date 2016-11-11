@@ -23,7 +23,7 @@ void MiNodeRotary::attach(AnalogConnName connName)
 
   MiNodeComponent::initAConnector(connName);
 
-  PinName pinName = MiNodeConn::calcP0Name(this->cn);
+  PinName pinName = MiNodeConn::calcP0Name(this->cna);
   if(pin) {
     delete pin;
   }

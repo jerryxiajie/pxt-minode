@@ -84,13 +84,13 @@ declare namespace minode {
     /**
      * Do something when Light level change.
      */
-    //% blockId=device_on_LightSensor_CHANGE block="lightSensor %connName| on change" shim=minode::onLightSensorEvent
+    //% blockId=device_on_LightSensor_CHANGE block="light %connName| on change" shim=minode::onLightSensorEvent
     function onLightSensorEvent(connName: AnalogConnName, body: () => void): void;
 
     /**
      * Get Light level.from 1(brightest) to 5(darkness).
      */
-    //% blockId=device_LightSensor_GET_light_level block="lightSensor %connName| get level"
+    //% blockId=device_LightSensor_GET_light_level block="light %connName| get level"
     //% advanced=true shim=minode::LightSensorGetLevel
     function LightSensorGetLevel(connName: AnalogConnName): number;
 
@@ -110,13 +110,13 @@ declare namespace minode {
     /**
      * Choose an RGB color from the given table.
      */
-    //% blockId=device_RGB_ChooseColor block="rgb %connName| set %MiNodeColor" shim=minode::RGBChooseColor
+    //% blockId=device_RGB_ChooseColor block="rgb led %connName| set %MiNodeColor" shim=minode::RGBChooseColor
     function RGBChooseColor(connName: ConnName, color: MiNodeColor): void;
 
     /**
      * Converts red, green, blue channels into a RGB color.
      */
-    //% blockId=device_RGB_SetColor block="rgb %connName| set red %red| green %green| blue %blue"
+    //% blockId=device_RGB_SetColor block="rgb led %connName| set red %red| green %green| blue %blue"
     //% advanced=true shim=minode::RGBSetColor
     function RGBSetColor(connName: ConnName, red: number, green: number, blue: number): void;
 }

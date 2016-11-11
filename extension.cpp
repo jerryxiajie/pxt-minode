@@ -171,7 +171,7 @@ namespace minode {
   /**
   * Do something when DHT11 temperature change.
   */
-  //% blockId=device_on_DHTtemperature_CHANGE block="on dht11 %connName| temperature change"
+  //% blockId=device_on_DHTtemperature_CHANGE block="dht11 %connName| on temperature change"
   //% advanced=true
   void onDHTEvent(ConnName connName, Action body)
   {
@@ -250,7 +250,7 @@ namespace minode {
   /**
   * Do something when Light level change.
   */
-  //% blockId=device_on_LightSensor_CHANGE block="lightSensor %connName| on change"
+  //% blockId=device_on_LightSensor_CHANGE block="light %connName| on change"
   void onLightSensorEvent(AnalogConnName connName, Action body)
   {
     int id;
@@ -265,7 +265,7 @@ namespace minode {
   /**
    * Get Light level.from 1(brightest) to 5(darkness).
   */
-  //% blockId=device_LightSensor_GET_light_level block="lightSensor %connName| get level"
+  //% blockId=device_LightSensor_GET_light_level block="light %connName| get level"
   //% advanced=true
   int LightSensorGetLevel(AnalogConnName connName)
   {
@@ -312,7 +312,7 @@ namespace minode {
   /**
  * Choose an RGB color from the given table.
  */
-  //% blockId=device_RGB_ChooseColor block="rgb %connName| set %MiNodeColor"
+  //% blockId=device_RGB_ChooseColor block="rgb led %connName| set %MiNodeColor"
   void RGBChooseColor(ConnName connName , MiNodeColor color)
   {
     MiNodeRGB* pRGB;
@@ -325,7 +325,7 @@ namespace minode {
   /**
   * Converts red, green, blue channels into a RGB color.
   */
-  //% blockId=device_RGB_SetColor block="rgb %connName| set red %red| green %green| blue %blue"
+  //% blockId=device_RGB_SetColor block="rgb led %connName| set red %red| green %green| blue %blue"
   //% advanced=true
   void RGBSetColor(ConnName connName , int red, int green, int blue)
   {
