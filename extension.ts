@@ -1,27 +1,10 @@
+/// <reference path="shim.d.ts">
 
 /**
  * Provides access to basic minode functionality.
  */
 //% color=#2699BF weight=5
 namespace minode {
-
-    /**
-     * Get pinname
-     */
-    //% noRefCounting
-    interface getPin(connName: ConnName): number;
-
-    /**
-     * Get analog pinname
-     */
-    //% noRefCounting
-    interface getanalogPin(connName: AnalogConnName): number;
-
-    /**
-     * Get Pin Property
-     */
-    //% noRefCounting
-    interface getPinProperty(connName: ConnName): number;
 
     /**
      * control the motor speed (0 to 100)
