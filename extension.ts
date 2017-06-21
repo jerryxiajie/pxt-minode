@@ -1,4 +1,4 @@
-/// <reference path="shim.d.ts">
+/// <reference path="shim.d.ts"/>
 
 /**
  * Provides access to basic minode functionality.
