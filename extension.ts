@@ -5,6 +5,26 @@
 //% color=#2699BF weight=5
 namespace minode {
 
+    /**
+     * Get pinname
+     */
+    //% blockId=get_pin_name
+    //% shim=minode::MinodeShim
+    function getPin(connName: ConnName): number;
+
+    /**
+     * Get analog pinname
+     */
+    //% blockId=get_analog_pin_name
+    //% shim=minode::MinodeShim
+    function getanalogPin(connName: AnalogConnName): number;
+
+    /**
+     * Get Pin Property
+     */
+    //% blockId=get_pin_property
+    //% shim=minode::MinodeShim
+    function getPinProperty(connName: ConnName): number;
 
     /**
      * control the motor speed (0 to 100)
