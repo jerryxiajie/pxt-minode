@@ -1,6 +1,9 @@
 // Auto-generated. Do not edit.
 declare namespace minode {
 
+
+    function MinodeShim(void): void;
+    
     /**
      * Get pinname
      */
@@ -24,7 +27,7 @@ declare namespace minode {
 
     /**
      * Do something when a switch is opened/closed
-     * @param switchId a switch ID .
+     * @param switchId a switch ID ....
      * @param connName MiNode Connector Name
      * @param event Event to listen
      */
@@ -76,7 +79,7 @@ declare namespace minode {
     //% blockId=device_PIR_istrig block="pir %connName| is triggered"
     //% advanced=true
     //% shim=minode::MinodeShim
-    function PIRIsTriggered(connName: ConnName): boolean;
+    function PIRIsTriggered(connName: ConnName): boolean;1
 
     /**
      * Do something when Rotary change.
