@@ -13,6 +13,7 @@
         "extension.cpp",
         "extension.ts",
         "shims.d.ts",
+        "sim.d.ts",
         "enums.d.ts",
         "MiNodeConn.h",
         "MiNodeConn.cpp",
